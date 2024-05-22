@@ -1,0 +1,191 @@
+#list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    width: 100%;
+    height: calc(92.5vh - 20px);
+    box-sizing: border-box;
+    box-shadow: 0rem 0rem 0.5rem rgba(32, 32, 32, 0.5);
+    overflow-y: auto;
+    user-select: none;
+}
+#search-bar {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 1.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 5rem;
+    min-width: 50%;
+    width: fit-content;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+#search-filters {
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+#search-filters li {
+    display: flex;
+    border-right: 1px solid var(--dark);
+    padding: 0rem 1rem 0rem 1rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    transition: height 150ms;
+}
+#search-filters li:hover {
+    animation: pulseBackground 5s ease-in-out;
+    transition: height 150ms;
+}
+#search-bar img {
+    max-width: 1rem;
+    height: auto;
+}
+
+#list table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.25rem;
+}
+#list tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+#list thead tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align: left;
+}
+#list tbody tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid var(--border);
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+#list tbody tr:hover {
+    transform: scale(1.005);
+    background-color: var(--background-transparent);
+    transition: 200ms;
+}
+#search-filters input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5rem;
+    color: var(--text);
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    width: 200%;
+    background: none;
+}
+#search-filters select {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5rem;
+    color: var(--text);
+    font-size: 1rem;
+    text-align-last: center;
+    box-sizing: border-box;
+    outline: none;
+    width: fit-content;
+    appearance: none;
+    cursor: pointer;
+    background: none;
+}
+#search-filters select option {
+    text-align: start;
+}
+#search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.25rem;
+    width: 2.25rem;
+    border: none;
+    border-radius: 5rem;
+    color: var(--text);
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    min-width: 2.25rem;
+}
+#search-btn:hover {
+    background-color: var(--background-transparent);
+    transition: 200ms;
+}
+#search-btn img {
+    max-width: 1.5rem;
+}
+::placeholder {
+    color: var(--dark);
+    opacity: 1; /* Firefox */
+}
+
+@media (max-width: 650px) {
+    #list {
+        min-height: calc(82.5vh - 20px);
+        height: fit-content;
+    }
+    #search-bar {
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        border-radius: var(--border-radius);
+        padding: 0.75rem;
+    }
+    #search-filters {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: fit-content;
+        width: 100%;
+    }
+    #search-filters li {
+        border-right: none;
+        padding: 0rem 0.5rem 0rem 0.5rem;
+        box-sizing: border-box;
+    }
+    #search-filters input {
+        width: 100%;
+    }
+    #search-filters select {
+        width: 100%;
+    }
+    #search-btn {
+        height: 2.5rem;
+        width: 100%;
+        background-color: var(--primary);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+    #search-btn:hover {
+        background-color: var(--secondary);
+    }
+}

@@ -1,0 +1,21 @@
+<%
+    let signUp = null;
+    let signIn = null;
+    
+    switch (abreviation) {
+        case "es":
+            signUp = "Registrarse";
+            signIn = "Iniciar Sesión";
+            break;
+        case "en":
+            signUp = "Sign Up";
+            signIn = "Sign In";
+            break;
+        case "ca":
+            signUp = "Registra't";
+            signIn = "Inicia Sessió";
+    }
+%>
+
+<li id="sign-up-btn"><%- signUp %></a></li>
+<li id="sign-in-btn"><%- signIn %></li>

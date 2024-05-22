@@ -1,0 +1,39 @@
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 5rem;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 5rem;
+    align-items: center;
+    padding: 2rem;
+    height: 40%;
+    width: 25%;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--border) 0 0.2rem 0.2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translate(0, 0.2rem);
+    animation: shadowShine 0.5s 0.2s forwards;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.card h2 {
+    font-size: 2rem;
+}
+.card div {
+    font-size: 1.5rem;
+}
+.total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}

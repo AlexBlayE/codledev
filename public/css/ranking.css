@@ -1,0 +1,50 @@
+#search-bar {
+    min-width: 30%;
+}
+#ranking-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    width: 80%;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+}
+#ranking-list thead th:nth-child(1), #ranking-list tbody td:nth-child(1) {
+    width: 15%;
+}
+#ranking-list thead th:nth-child(2), #ranking-list tbody td:nth-child(2) {
+    width: 60%;
+}
+#ranking-list thead th:nth-child(3), #ranking-list tbody td:nth-child(3) {
+    width: 25%;
+    text-align: center;
+}
+#search-filters li:nth-child(1) {
+    width: 100%;
+    border-radius: 5rem 0 0 5rem;
+}
+
+
+@media (max-width: 650px) {
+    #list input {
+        text-align: center;
+    }
+    #ranking-list thead th {
+        display: flex;
+        align-items: center;
+    }
+    #ranking-list thead th:nth-child(1) {
+        visibility: hidden;
+    }
+    #ranking-list thead th:nth-child(2) {
+        width: 50%;
+    }
+    #ranking-list thead th:nth-child(3) {
+        width: 30%;
+    }
+    #search-filters li:nth-child(1) {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+}

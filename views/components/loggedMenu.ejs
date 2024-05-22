@@ -1,0 +1,22 @@
+<%
+    let profile = null;
+    let logOut = null;
+    
+    switch (abreviation) {
+        case "es":
+            profile = "Perfil";
+            logOut = "Cerrar sesión";
+            break;
+        case "en":
+            profile = "Profile";
+            logOut = "Log Out";
+            break;
+        case "ca":
+            profile = "Perfil";
+            logOut = "Tancar sessió";
+            break;
+    }
+%>
+
+    <li id="profile-btn"><%- profile %>
+    <li id="log-out-btn"><%- logOut %></li>

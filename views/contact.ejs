@@ -1,0 +1,81 @@
+<% 
+    let windowTitle = null;
+    let name = null;
+    let email = null;
+    let message = null;
+    let send = null;
+
+    switch (abreviation) {
+        default:
+            windowTitle = "Codle - Un problema de código al día";
+            name = "Nombre";
+            email = "Correo electrónico";
+            message = "Mensaje";
+            send = "Enviar";
+            break;
+        case "en":
+            windowTitle = "Codle - A daily code problem";
+            name = "Name";
+            email = "Email";
+            message = "Message";
+            send = "Send";
+            break;
+        case "ca":
+            windowTitle = "Codle - Un problema de codi al dia";
+            name = "Nom";
+            email = "Correu electrònic";
+            message = "Missatge";
+            send = "Enviar";
+            break;
+    }
+%>
+
+
+<!DOCTYPE html>
+<html lang="<% abreviation %>">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- windowTitle %></title>
+    <link rel="icon" type="image/svg" href="img/favicon.svg" />
+    <meta name="description"
+        content="Refuerza tus conocimientos de código retándote con un problema diario disponible en varios lenguajes de programación.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script type="module" src="js/main.js" defer></script>
+    <script src="js/formsManagement.js" defer></script>
+</head>
+
+<body>
+    <%- include('./components/header') %>
+        <main>
+            <div id="contact">
+                <form id="contact-form" action="/contact" method="POST">
+                    <div id="contact-data">
+                        <div id="contact-name" class="contact-data contact-field">
+                            <label for="name"><%- name %></label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div id="contact-email" class="contact-data contact-field">
+                            <label for="email"><%- email %></label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                    </div>
+                    <div id="contact-message" class="contact-field">
+                        <label for="message"><%- message %></label>
+                        <textarea name="message" id="message" required></textarea>
+                    </div>
+                    <button type="submit"><%- send %></button>
+                </form>
+            </div>
+        </main>
+</body>
+
+</html>

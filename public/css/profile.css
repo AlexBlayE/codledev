@@ -1,0 +1,230 @@
+#profile-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    width: 100%;
+    height: calc(92.5vh - 20px);
+    box-sizing: border-box;
+    box-shadow: 0rem 0rem 0.5rem rgba(32, 32, 32, 0.5);
+    overflow-y: auto;
+    user-select: none;
+}
+
+#username-settings,
+#email-settings,
+#password-settings {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-chunk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#profile-info {
+    width: 35%;
+}
+
+#profile-settings {
+    width: 40%;
+}
+
+#profile-settings-form {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.data-settings div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    height: 2.5rem;
+    border: 2px solid transparent;
+    outline: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.data-settings div input {
+    align-self: center;
+    width: 100%;
+    height: 2.5rem;
+    margin-right: 0.75rem;
+}
+
+.data-settings div:hover {
+    transform: scale(1.01);
+}
+
+.data-settings div:focus-within {
+    border: 2px solid var(--primary);
+    outline: none;
+    transform: scale(1.00);
+}
+
+.data-settings div label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+.profile-settings-input {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+#profile-settings-button {
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
+    color: var(--button-text);
+    width: 100%;
+}
+
+#profile-settings-button:hover {
+    background-color: var(--secondary);
+}
+
+.data-settings div label:hover img {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: width 100ms, height 100ms;
+}
+
+label img {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: width 100ms, height 100ms;
+}
+
+#profile-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem;
+}
+
+.profile-stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    gap: 0.5rem;
+}
+
+.profile-stat p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.profile-stat img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.stat {
+    display: flex;
+    width: 7.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#password-settings div:nth-child(3) {
+    margin-top: 0.5rem;
+}
+
+
+@media (max-width: 650px) {
+    main {
+        height: calc(132.5vh - 4rem);
+    }
+
+    #profile-container {
+        flex-direction: column;
+        height: initial;
+    }
+
+    #profile-info {
+        width: 100%;
+    }
+
+    #profile-settings {
+        width: 100%;
+    }
+
+    #profile-settings-form {
+        width: 100%;
+    }
+
+    .data-settings div {
+        height: 3rem;
+    }
+
+    .data-settings div input {
+        height: 3rem;
+    }
+
+    .data-settings div label {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .profile-settings-input {
+        height: 3rem;
+    }
+
+    #profile-settings-button {
+        height: 3rem;
+    }
+
+    .stat-icon {
+        width: 40%;
+    }
+
+    .profile-stat img {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .profile-stat p {
+        font-size: 2rem;
+    }
+
+    .stat {
+        width: 10rem;
+    }
+
+    #password-settings div:nth-child(3) {
+        margin-top: 1rem;
+    }
+}

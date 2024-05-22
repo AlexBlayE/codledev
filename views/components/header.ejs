@@ -1,0 +1,186 @@
+<% 
+    let goToHomePage = null;
+    let dailyCodle = null;
+    let problems = null;
+    let ranking = null;
+    let contact = null;
+    let language = null;
+    let signup = null;
+    let username = null;
+    let email = null;
+    let password = null;
+    let confirmPassword = null;
+    let haveRead = null;
+    let termsConditions = null;
+    let signupGoogle = null;
+    let signupGithub = null;
+    let signin = null;
+    let signinGoogle = null;
+    let signinGithub = null;
+
+    switch (abreviation) {
+        default:
+            goToHomePage = "Volver a la página principal";
+            dailyCodle = "CODLE DIARIO";
+            problems = "PROBLEMAS";
+            ranking = "CLASIFICACIÓN";
+            contact = "CONTACTO";
+            language = "Idioma";
+            signup = "Registrarse";
+            username = "Nombre de usuario";
+            email = "Correo electrónico";
+            password = "Contraseña";
+            confirmPassword = "Confirmar contraseña";
+            haveRead = "He leído y acepto los";
+            termsConditions = "términos y condiciones";
+            signupGoogle = "Registrarse con Google";
+            signupGithub = "Registrarse con Github";
+            signin = "Iniciar sesión";
+            signinGoogle = "Iniciar sesión con Google";
+            signinGithub = "Iniciar sesión con Github";
+            break;
+        case "en":
+            goToHomePage = "Go to the home page";
+            dailyCodle = "DAILY CODLE";
+            problems = "PROBLEMS";
+            ranking = "RANKING";
+            contact = "CONTACT";
+            language = "Language";
+            signup = "Sign Up";
+            username = "Username";
+            email = "Email";
+            password = "Password";
+            confirmPassword = "Confirm Password";
+            haveRead = "I have read and accept the";
+            termsConditions = "terms and conditions";
+            signupGoogle = "Sign Up with Google";
+            signupGithub = "Sign Up with Github";
+            signin = "Sign In";
+            signinGoogle = "Sign In with Google";
+            signinGithub = "Sign In with Github";
+            break;
+        case "ca":
+            goToHomePage = "Torna a la pàgina principal";
+            dailyCodle = "CODLE DIARI";
+            problems = "PROBLEMES";
+            ranking = "RÀNKING";
+            contact = "CONTACTE";
+            language = "Idioma";
+            signup = "Registra't";
+            username = "Nom d'usuari";
+            email = "Correu electrònic";
+            password = "Contrasenya";
+            confirmPassword = "Confirma la contrasenya";
+            haveRead = "He llegit i accepto els";
+            termsConditions = "termes i condicions";
+            signupGoogle = "Registra't amb Google";
+            signupGithub = "Registra't amb Github";
+            signin = "Inicia sessió";
+            signinGoogle = "Inicia sessió amb Google";
+            signinGithub = "Inicia sessió amb Github";
+            break;
+    }
+%>
+
+<header>
+    <a href="/" draggable="false" id="logo-link" aria-label="Go to Home Page">
+        <img id="logo-header" alt="logo" src="/img/logo.png">
+    </a>
+    <nav>
+        <ul>
+            <li><a href="/"><%- dailyCodle %></a></li>
+            <li><a href="/problems"><%- problems  %></a></li>
+            <li><a href="/ranking"><%- ranking  %></a></li>
+            <li><a href="/contact"><%- contact %></a></li>
+        </ul>
+    </nav>
+    <div id="header-buttons">
+        <div id="dark-light-switch">
+            <img class="invert" src="/img/dark-light.png">
+        </div>
+        <div id="burger-button-container">
+            <svg id="burger-button" viewBox="0 0 24 24" width="32" height="32">
+                <line x1="0" y1="4" x2="24" y2="4" />
+                <line x1="0" y1="12" x2="24" y2="12" />
+                <line x1="0" y1="20" x2="24" y2="20" />
+            </svg>
+        </div>
+        <div id="burger-menu">
+            <div id="burger-triangle"></div>
+            <ul id="burger-options">
+                <% if (isLogged) { %>
+                <%- include('./loggedMenu.ejs') %>
+            <% } else { %>
+                <%- include('./unloggedMenu.ejs') %>
+            <% } %>
+                <li id="lang-menu"><%- language %></li>
+            </ul>
+        </div>
+    </div>
+    <div id="sign-up" class="sign-div">
+        <form class="sign-form">
+            <div class="close">
+                <span>&times;</span>
+            </div>
+            <h2><%- signup %></h2>
+            <div class="sign-form-fields">
+                <input id="signup-user" type="text" placeholder="<%- username %>">
+                <input id="signup-email" type="text" placeholder="<%- email %>">
+                <input id="signup-pass" type="password" placeholder="<%- password %>">
+                <input id="signup-confirm" type="password" placeholder="<%- confirmPassword %>">
+            </div>
+            <div id="terms">
+                <input type="checkbox" id="terms-checkbox" name="terms-checkbox">
+                <label for="terms-checkbox"><%- haveRead %> <a href="#"><%- termsConditions %></a>.</label>
+            </div>
+            <button disabled id="signup-btn" class="sign-btn" type="submit"><%- signup %></button>
+            <hr>
+            <button disabled id="signup-google" class="google-btn oauth-btn">
+                <%- signupGoogle %>
+            </button>
+            <button disabled id="signup-github" class="github-btn oauth-btn">
+                <%- signupGithub %>
+            </button>
+        </form>
+    </div>
+    <div id="login" class="sign-div">
+        <form class="sign-form">
+            <div class="close">
+                <span>&times;</span>
+            </div>
+            <h2><%- signin %></h2>
+            <div class="sign-form-fields">
+                <input id="signin-user" type="text" placeholder="<%- username %>">
+                <input id="signin-pass" type="password" placeholder="<%- password %>">
+            </div>
+            <button id="signin-btn" class="sign-btn" type="submit"><%- signin %></button>
+            <hr>
+            <button id="signin-google" class="google-btn oauth-btn">
+                <%- signinGoogle %>
+            </button>
+            <button id="signin-github" class="github-btn oauth-btn">
+                <%- signinGithub %>
+            </button>
+        </form>
+    </div>
+    <dialog id="language-dialog" class="dialog">
+        <div class="dialog-content">
+            <div class="close">
+                <span>&times;</span>
+            </div>
+            <div class="dialog-options">
+                <button id="es" class="language-btn">Español</button>
+                <button id="en" class="language-btn">English</button>
+                <button id="ca" class="language-btn">Català</button>
+            </div>
+        </div>
+    </dialog>
+</header>
+<footer>
+    <nav>
+        <a href="/"><img class="decolor" src="/img/favicon.svg" alt="logo"></a>
+        <a href="/problems"><img class="invert" src="/img/problems.svg" alt="problems"></a>
+        <a href="/ranking"><img class="invert" src="/img/ranking.svg" alt="ranking"></a>
+        <a href="/contact"><img class="invert" src="/img/contact.svg" alt="contact"></a>
+    </nav>
+</footer>

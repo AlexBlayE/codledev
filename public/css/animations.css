@@ -1,0 +1,119 @@
+/* -------------------- Keyframes -------------------- */
+
+@keyframes pulseBackground {
+    0% {
+        background-color: rgba(255,255,255,0);
+    }
+    3.5% {
+        background-color: var(--background-transparent);
+    }
+    100% {
+        background-color: rgba(255,255,255,0);
+    }
+    
+}
+
+@keyframes foldDown {
+    0% {
+        transform-origin: 50% 0%;
+        transform: scaleY(0%);
+    }
+    100% {
+        transform-origin: 50% 0%;
+        transform: scaleY(100%);
+    }
+    
+}
+@keyframes foldUp {
+    0% {
+        transform-origin: 50% 0%;
+        transform: scaleY(100%);
+    }
+    100% {
+        transform-origin: 50% 0%;
+        transform: scaleY(0%);
+        display: none;
+    }
+}
+@keyframes rotateSVG {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    15% {
+        transform: rotate(0deg) scale(0.7);
+    }
+    85% {
+        transform: rotate(90deg) scale(0.7);
+    }
+    100% {
+        transform: rotate(90deg) scale(1);
+    }
+}
+@keyframes rotateSVGBack {
+    0% {
+        transform: rotate(90deg) scale(1);
+    }
+    15% {
+        transform: rotate(90deg) scale(0.7);
+    }
+    85% {
+        transform: rotate(0deg) scale(0.7);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+@keyframes shakeRotation {
+    0% {
+        transform: rotate(calc(var(--initial-rotation, 0deg) + 0deg));
+    }
+    20% {
+        transform: rotate(calc(var(--initial-rotation, 0deg) + 10deg));
+    }
+    40% {
+        transform: rotate(calc(var(--initial-rotation, 0deg) - 10deg)) scale(1.5);
+    }
+    60% {
+        transform: rotate(calc(var(--initial-rotation, 0deg) + 10deg));
+    }
+    80% {
+        transform: rotate(calc(var(--initial-rotation, 0deg) - 10deg));
+    }
+    100% {
+        transform: rotate(calc(var(--initial-rotation, 0deg) + 0deg));
+    }
+}
+@keyframes displayNone {
+    100% {
+        display: none;
+    }
+}
+@keyframes cutImage {
+    0% {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    }
+    35% {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    }
+    50% {
+        clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 100% 100%);
+    }
+    65% {
+        clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    }
+    100% {
+        clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    }
+}
+@keyframes shadowShine {
+    0% {
+        box-shadow: var(--dark) 0 0 0;
+    }
+    30% {
+        box-shadow: var(--dark) 0 0 0.5rem;
+    }
+    100% {
+        box-shadow: var(--border) 0 0rem 0.15rem;
+    }
+    
+}

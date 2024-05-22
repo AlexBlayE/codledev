@@ -1,0 +1,374 @@
+/* -------------------- Id elements -------------------- */
+#problem { /* Container: Problem info and code editor */
+    display: flex;
+    flex-direction: row;
+    height: calc(77.5vh - 30px);
+    gap: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+#problem-info { /* Container: Problem header and detail chunks */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    width: 28rem;
+    box-sizing: border-box;
+    box-shadow: 0rem 0rem 0.5rem rgba(32, 32, 32, 0.5);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#problem-header { /* Container: Problem name and problem header details */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+#problem-name { /* H1: Problem name */
+    margin-right: 3%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+[data-title]:hover::after { /* Pseudo: Problem name hover */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s;
+}
+[data-title]::after { /* Pseudo: Problem name after */
+    font-size: 1rem;
+    content: attr(data-title);
+    position: fixed;
+    padding: 0.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    visibility: hidden;
+}
+#problem-header-details { /* Container: Problem header details */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+#problem-editor { /* Container: Problem editor */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: calc(80vw - 30px);
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: 0rem 0rem 0.5rem rgba(32, 32, 32, 0.5);
+}
+#editor-toolbar { /* Container: Editor toolbar */
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+#monaco-editor { /* Container: Code editor */
+    width: 100%;
+    height: 90%;
+}
+#problem-additional { /* Container: Problem additional space */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0rem 0rem 0.5rem rgba(32, 32, 32, 0.5);
+    height: calc(15vh);
+    user-select: none;
+}
+#resolved-languages { /* Container: Resolved languages */
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    overflow-y: hidden;
+}
+#language-icons { /* Container: Language icons */
+    display: flex;
+    gap: 1rem;
+    margin-left: 1rem;
+    overflow-x: auto;
+}
+#editor-styles { /* Container: Editor options */
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1.25rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#editor-styles img { /* Img: Editor options */
+    height: 1.75rem;
+    width: auto;
+}
+#cog-button:hover {
+    fill: var(--primary);
+}
+#cog-menu {
+    user-select: none;
+    z-index: 3;
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--white);
+    position: absolute;
+    top: 18vh;
+    right: 1.5rem;
+    border: 0.2rem solid var(--dark);
+    border-radius: 0.5rem;
+}
+#cog-triangle::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 1rem solid transparent;
+    border-bottom: 1rem solid var(--dark);
+    position: absolute;
+    top: -2rem;
+    right: 0.85rem;
+}
+#cog-triangle::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 0.75rem solid transparent;
+    border-bottom: 0.75rem solid var(--white);
+    position: absolute;
+    top: -1.5rem;
+    right: 1.15rem;
+}
+#cog-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+#cog-options li {
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+#cog-options li:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.3rem;
+    text-decoration-skip: 5px;
+}
+#language-selector {
+    width: 8rem;
+    padding-left: 0.5rem;
+    line-height: 1;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    height: 2rem;
+    background: url(../img/chevron-down.svg) no-repeat right var(--white);
+    background-size: 0.75rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background-position-x: 6.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+#language-selector:focus {
+    outline: 1px solid var(--dark);
+}
+#share-compound {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+#share-btn {
+    border-radius: 10px 0 0 10px;
+}
+#share-options {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 0.5rem;
+    height: 3rem;
+    background-color: var(--background);
+    transition: width 200ms;
+}
+.share-option {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    border-radius: 10%;
+}
+.share-option:hover {
+    outline: 1px solid var(--dark);
+}
+.share-option img {
+    z-index: 0;
+    height: 100%;
+    border-radius: 10%;
+}
+#twitter-share {
+    background-image: url("../img/x.svg");
+    background-size: cover;
+}
+#twitter-share img {
+    animation: cutImage 4s alternate infinite -0.75s;
+}
+#share-expand-btn {
+    width: 3.4rem;
+    border-radius: 0 10px 10px 0;
+}
+#share-chevron {
+    filter: invert(1);
+    padding: 0;
+    height: 0.8rem;
+    width: auto;
+    --initial-rotation: -90deg;
+    transform: rotate(var(--initial-rotation));
+}
+#share-compound:hover #share-chevron {
+    animation: shakeRotation 0.4s linear;
+}
+#submit {
+    position: relative;
+    z-index: 2;
+}
+#editor-styles {
+    cursor: pointer;
+    transition: 200ms transform;
+}
+#editor-styles:hover, #editor-styles:hover img {
+    transform: rotate(20deg) scale(1.05);
+    transition: 300ms;
+}
+
+
+
+/* -------------------- Class elements -------------------- */
+.detail-chunk { /* Container: Problem detail chunk */
+    display: flex;
+    flex-direction: column;
+    width: 100%;    
+    text-align: left;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+.language-icon { /* Img: Language icon */
+    height: 2rem;
+    width: auto;
+}
+.additional-btn { /* Button: Additional button */
+    z-index: 1;
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    background-color: var(--primary);
+    color: var(--button-text);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.additional-btn:hover {
+    background-color: var(--secondary);
+}
+.additional-btn:active {
+    background-color: var(--active);
+}
+.dialog-options .theme-btn {
+    min-width: 10rem;
+    width: fit-content;
+    height: auto;
+    padding: 0.5rem;
+}
+
+
+
+/* -------------------- Media Queries -------------------- */
+@media (max-width: 800px) {
+    #resolved-languages p, #resolved-languages svg {
+        display: none;
+    }
+}
+@media (max-width: 650px) {
+    main {
+        width: calc(100vw - 20px);
+        gap: 10px;
+    }
+    #problem {
+        flex-direction: column;
+        height: 70%;
+        width: 100%;
+    }
+    #problem-info {
+        width: 100%;
+        height: 100%;
+    }
+    #problem-editor {
+        display: none;
+    }
+    #problem-additional {
+        width: 100%;
+        padding: 1rem;
+        gap: 2rem;
+    }
+    #problem-additional p, #problem-additional svg, #submit {
+        display: none;
+        visibility: hidden;
+    }
+    #resolved-languages {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: end;
+    }
+    #language-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 45%;
+        gap: 0.5rem;
+        overflow-x: auto;
+        margin: 0;
+    }
+    #share-compound {
+        position: absolute;
+    }
+}

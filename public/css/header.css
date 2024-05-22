@@ -1,0 +1,344 @@
+/* -------------------- General elements -------------------- */
+header {
+    height: 7.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--white);
+    box-shadow: 0rem 0rem 0.5rem rgba(32, 32, 32, 0.5);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem;
+    font-weight: bold;
+    align-items: center;
+    box-sizing: border-box;
+    user-select: none;
+}
+header nav {
+    justify-self: center;
+    width: 50%;
+    margin-right: 10%;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    padding: 0.2rem;
+}
+header nav ul li a {
+    text-decoration: none;
+}
+header nav ul li a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.3rem;
+    text-decoration-skip: 5px;
+}
+footer {
+    display: none;
+}
+
+
+
+
+/* -------------------- Id elements -------------------- */
+#logo-link {
+    display: flex;
+    margin-left: 1rem;
+    width: 10rem;
+    height: 2.5rem;
+    cursor: pointer;
+    align-items: center;
+}
+#logo-header {
+    margin-left: 2rem;
+    width: 6.6rem;
+    height: 1.2rem;
+}
+#burger-button {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1.25rem;
+    stroke: var(--dark);
+    stroke-width: 0.15rem;
+    cursor: pointer;
+}
+#burger-button:hover {
+    stroke: var(--primary);
+}
+#burger-menu {
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--white);
+    position: absolute;
+    top: 9vh;
+    right: 0.75rem;
+    border: 0.2rem solid var(--dark);
+    border-radius: var(--border-radius);
+}
+#burger-triangle::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 1rem solid transparent;
+    border-bottom: 1rem solid var(--dark);
+    position: absolute;
+    top: -2rem;
+    right: 0.85rem;
+}
+#burger-triangle::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 0.75rem solid transparent;
+    border-bottom: 0.75rem solid var(--white);
+    position: absolute;
+    top: -1.5rem;
+    right: 1.15rem;
+}
+#burger-options {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+#burger-options li {
+    text-decoration: none;
+    cursor: pointer;
+}
+#burger-options li:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.3rem;
+    text-decoration-skip: 5px;
+}
+#signup-btn {
+    margin-top: 0.25rem;
+}
+#terms {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+}
+#terms-checkbox {
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+#terms label a {
+    text-decoration: none;
+    color: var(--primary);
+}
+#header-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+    align-items: center;
+}
+#dark-light-switch {
+    cursor: pointer;
+    transition: 300ms transform;
+}
+#dark-light-switch:hover {
+    transform: rotate(360deg);
+    transition: 500ms;
+}
+#dark-light-switch img {
+    width: 1.75rem;
+}
+
+
+
+/* -------------------- Class elements -------------------- */
+.sign-div {
+    z-index: 1;
+    display: none;
+    position: relative;
+    background-color: var(--background-transparent);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(1px);
+}
+.sign-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    width: 30rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+}
+.sign-form-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.sign-form input {
+    padding: 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 0px;
+    outline: none;
+    background-color: var(--white);
+}
+.sign-form input:hover {
+    transform: scale(1.005);
+    border: 1px solid var(--secondary);
+}
+.sign-form input:focus {
+    border: 2px solid var(--primary);
+}
+.sign-form input:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+.sign-form input:last-child {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+.close {
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.75rem;
+    top: 1rem;
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.close:hover {
+    transform: scale(1.2);
+}
+.sign-btn {
+    height: 2.75rem;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
+    border: none;
+    color: var(--button-text);
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: 200ms;
+}
+.sign-btn:hover {
+    background-color: var(--secondary);
+    transition: 200ms;
+}
+.sign-btn:active {
+    background-color: var(--active);
+    transform: scale(0.98);
+}
+.google-btn {
+    background-image: url('../img/google.svg');
+}
+.github-btn {
+    background-image: url('../img/github.svg');
+}
+.oauth-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25%;
+    height: 2.75rem;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 200ms;
+    background-repeat: no-repeat;
+    background-position: 4% 50%;
+    background-size: 1.4rem;
+}
+.oauth-btn:hover {
+    color: var(--secondary);
+    border-color: var(--secondary);
+    transition: 200ms;
+    background-position: 6% 50%;
+    background-size: 1.5rem;
+}
+.oauth-btn:active {
+    color: var(--active);
+    border-color: var(--active);
+    transform: scale(0.98);
+}
+
+
+
+/* -------------------- Media queries -------------------- */
+@media (max-width: 800px) {
+    header {
+        font-size: 0.8rem;
+    }
+    header nav {
+        width: 60%;
+        margin-right: 0;
+    }
+}
+@media (max-width: 650px) {
+    html {
+        font-size: 12px;
+    }
+    #logo-header {
+        margin-left: 1rem;
+    }
+    header nav {
+        display: none;
+    }
+    #burger-options {
+        font-size: 1.2rem;
+    }
+    footer {
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        background-color: var(--white);
+        box-shadow: 0rem 0rem 0.5rem rgba(32, 32, 32, 0.5);
+        border-top: 1px solid var(--border);
+        padding: 0rem 2rem 0rem 2rem;
+        font-weight: bold;
+        position: fixed;
+        bottom: 0;
+        width: calc(100% - 4rem);
+    }
+    footer nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 80%;
+        align-items: center;
+        padding: 0.2rem;
+    }
+    footer nav img {
+        width: 3rem;
+        height: 3rem;
+    }
+}

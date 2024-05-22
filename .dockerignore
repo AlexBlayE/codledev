@@ -1,0 +1,9 @@
+/node_modules
+LICENSE
+README.md
+docker-compose.yml
+packege-lock.json
+/.github
+/.git
+/dist
+#TODO: fer que el docker ingori els arxius de monacoAssets i els generi cuan fiagi la compilacio en la imatge docker

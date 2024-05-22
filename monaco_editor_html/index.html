@@ -1,0 +1,218 @@
+<!-- <% 
+    let title = null; 
+    let category = null;
+    let description = null;
+    let input = null;
+    let output = null;
+    let windowTitle = null;
+
+    let pageDescription = null;
+    let problemDescription = null;
+    let problemInput = null;
+    let problemOutput = null;
+    let exampleOne = null;
+    let exampleTwo = null;
+    let theme = null;
+    let languagesResolved = null;
+    let submit = null;
+    let alternative = null;
+    let cute = null;
+
+
+    switch (abreviation) {
+        default:
+            title = title_es;
+            category = category_es;
+            description = description_es;
+            input = input_es;
+            output = output_es;
+            windowTitle = "Codle - Un problema de código al día";
+            pageDescription = "Refuerza tus conocimientos de código retándote con un problema diario disponible en varios lenguajes de programación.";
+            problemDescription = "Descripción";
+            problemInput = "Entrada";
+            problemOutput = "Salida";
+            exampleOne = "Ejemplo 1";
+            exampleTwo = "Ejemplo 2";
+            share = "Compartir";
+            languagesResolved = "Lenguajes Resueltos";
+            submit = "Enviar";
+            alternative = "Alternativo";
+            cute = "Bonico";
+            break;
+        case "en":
+            title = title_en;
+            category = category_en;
+            description = description_en;
+            input = input_en;
+            output = output_en;
+            windowTitle =  "Codle - A daily code problem";
+            pageDescription = "Strengthen your coding skills by challenging yourself with a daily problem available in multiple programming languages.";
+            problemDescription = "Description";
+            problemInput = "Input";
+            problemOutput = "Output";
+            exampleOne = "Example 1";
+            exampleTwo = "Example 2";
+            share = "Share";
+            languagesResolved = "Languages Resolved";
+            submit = "Submit";
+            alternative = "Alternative";
+            cute = "Cute";
+            break;
+        case "ca":
+            title = title_ca;
+            category = category_ca;
+            description = description_ca;
+            input = input_ca;
+            output = output_ca;
+            windowTitle = "Codle - Un problema de codi al dia";
+            pageDescription = "Reforça els teus coneixements de codi desafiant-te amb un problema diari disponible en diversos llenguatges de programació.";
+            problemDescription = "Descripció";
+            problemInput = "Entrada";
+            problemOutput = "Sortida";
+            exampleOne = "Exemple 1";
+            exampleTwo = "Exemple 2";
+            share = "Compartir";
+            languagesResolved = "Llenguatges Resolts";
+            submit = "Enviar";
+            alternative = "Alternatiu";
+            cute = "Rosa";
+            break;
+    }
+%>  -->
+
+<!DOCTYPE html>
+<!-- <html lang="<%- abreviation %>"> -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title><%- windowTitle %></title> -->
+    <link rel="canonical" href="https://codle.fun">
+    <link rel="icon" type="image/svg" href="/img/favicon.svg" />
+    <meta name="description"
+        content="Refuerza tus conocimientos de código retándote con un problema diario disponible en varios lenguajes de programación.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <script src="/js/utils.js" defer></script>
+    <!-- <script type="module" src="/js/index.js" defer></script> -->
+    <!-- <script type="module" src="/js/main.js" defer></script> -->
+    <script src="/js/formsManagement.js" defer></script>
+    <script type="module" src="./monaco.js" defer></script>
+</head>
+
+<body>
+    <!-- <%- include('./components/header.ejs') %> -->
+    <main>
+        <div id="problem">
+            <div id="problem-info">
+                <div id="problem-header">
+                    <!-- <h1 id="problem-name" data-title="<%- title %>"><%- title %></h1>  -->
+                    <div id="problem-header-details">
+                        <!-- <p><%- category %></p>  -->
+                        <svg class="vertical-separation-line" viewBox="0 0 8 16" width="8" height="16">
+                            <line x1="4" y1="0" x2="4" y2="16" />
+                        </svg>
+                        <!-- <p><%- difficulty %></p>  -->
+                    </div>
+                </div>
+                <hr>
+                <div class="detail-chunk">
+                    <!-- <h2><%- problemDescription %></h2> -->
+                    <!-- <p><%- description %></p>  -->
+                </div>
+                <hr>
+                <div class="detail-chunk">
+                    <!-- <h2><%- problemInput %></h2> -->
+                    <!-- <p><%- input %></p>  -->
+                </div>
+                <hr>
+                <div class="detail-chunk">
+                    <!-- <h2><%- problemOutput %></h2> -->
+                    <!-- <p><%- output %></p>  -->
+
+                </div>
+                <hr>
+                <div class="detail-chunk">
+                    <!-- <h2><%- exampleOne %></h2> -->
+                    <!-- <p><%- example1 %></p>  -->
+                </div>
+                <hr>
+                <div class="detail-chunk">
+                    <!-- <h2><%- exampleTwo %></h2> -->
+                    <!-- <p><%- example2 %></p>  -->
+                </div>
+            </div>
+            <div id="problem-editor">
+                <div id="editor-toolbar">
+                    <select id="language-selector">
+                        <option value="js">JavaScript</option>
+                        <option value="c++">C++</option>
+                        <option value="c">C</option>
+                        <option value="py">Python</option>
+                    </select>
+                    <div id="editor-styles">
+                        <img class="invert" src="/img/palette.svg">
+                    </div>
+                </div>
+                <hr>
+                <div id="monaco-editor">
+                </div>
+            </div>
+        </div>
+        <div id="problem-additional">
+            <div id="share-compound">
+                <!-- <button id="share-btn" class="share additional-btn"><%- share %></button> -->
+                <div id="share-options">
+                    <a id="twitter-share" class="share-option"><img src="/img/twitter.svg" alt="Share with Twitter"></a>
+                    <a id="linkedin-share" class="share-option"><img src="/img/linkedin.svg"
+                            alt="Share with LinkedIn"></a>
+                </div>
+                <button id="share-expand-btn" class="share additional-btn"><img id="share-chevron"
+                        src="/img/chevron-down.svg" alt="open share"></button>
+            </div>
+            <div id="resolved-languages">
+                <!-- <p><%- languagesResolved %></p> -->
+                <svg class="vertical-separation-line" viewBox="0 0 8 32" width="8" height="32">
+                    <line x1="4" y1="0" x2="4" y2="32" />
+                </svg>
+                <div id="language-icons" class="invert">
+                    <img id="js-icon" class="language-icon" src="/img/language-js.svg" alt="javascript">
+                    <img id="c++-icon" class="language-icon" src="/img/language-cpp.svg" alt="c++">
+                    <img id="c-icon" class="language-icon" src="/img/language-c.svg" alt="c">
+                    <img id="py-icon" class="language-icon" src="/img/language-python.svg" alt="python">
+                </div>
+            </div>
+            <!-- <button id="submit" class="additional-btn"><%- submit %></button> -->
+        </div>
+        <dialog id="theme-dialog" class="dialog">
+            <div class="dialog-content">
+                <div class="close">
+                    <span>&times;</span>
+                </div>
+                <div class="dialog-options">
+                    <button id="default-theme" class="theme-btn">Codle Original</button>
+                    <!-- <button id="alternative-theme" class="theme-btn">Codle <%- alternative %></button> -->
+                    <!-- <button id="cutesy-theme" class="theme-btn">Codle <%- cute %></button> -->
+                </div>
+            </div>
+        </dialog>
+        <dialog id="solve-dialog" class="dialog">
+            <div class="dialog-content">
+                <div class="close">
+                    <span>&times;</span>
+                </div>
+                <div id="solve-dialog-content">
+
+                </div>
+            </div>
+        </dialog>
+    </main>
+</body>
+
+</html>

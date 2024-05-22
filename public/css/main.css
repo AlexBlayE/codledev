@@ -1,0 +1,202 @@
+/* -------------------- General elements -------------------- */
+html {
+    --primary: #3876F2;
+    --secondary: #9591F2;
+    --active: #111BD9;
+    --border: #9da9b9;
+    --button-text: #FFFFFF;
+    --white: #202020;
+    --dark: #ffffff;
+    --background: #404040;
+    --background-transparent: #69696970;
+    --border-radius: 10px;
+}
+html[data-mode="light"] {
+    --primary: #111bd9;
+    --secondary: #9591F2;
+    --active: #3876F2;
+    --border: #9da9b9;
+    --button-text: #FFFFFF;
+    --white: #ffffff;
+    --dark: #202020;
+    --background: #CEDEF2;
+    --background-transparent: #cedef270;
+    --border-radius: 10px;
+}
+* {
+    color: var(--dark);
+    font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+*:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+html {
+    font-size: 16px;
+
+}
+body {
+    font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+    background-color: var(--background);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background);
+    margin: 10px;
+    gap: 10px;
+    height: calc(92.5vh - 20px);
+}
+h1 {
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+hr {
+    margin: 0;
+    width: 100%;
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+select option {
+    font-weight: bold;
+    background-color: var(--white);
+}
+option:checked {
+    color: var(--primary);
+}
+
+
+.close {
+    font-weight: bold;
+}
+.vertical-separation-line { /* Hr: Header details vertical line */
+    align-self: center;
+    stroke: var(--dark);
+    stroke-width: 1px;
+}
+
+.decolor {
+    filter: brightness(10);
+}
+
+
+/* -------------------- Dialog -------------------- */
+.dialog {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(1px);
+    background-color: var(--background-transparent);
+    border: none;
+}
+.dialog-content {
+    position: relative;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem 2rem 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    backdrop-filter: blur(1px);
+}
+.dialog-options {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+}
+.dialog-options button {
+    height: 2rem;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
+    border: none;
+    color: var(--button-text);
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: 200ms;
+}
+.dialog-options button:hover {
+    background-color: var(--secondary);
+    transition: 200ms;
+}
+.dialog-options button:active {
+    background-color: var(--active);
+    transform: scale(0.98);
+}
+
+
+
+/* -------------------- Scrollbar -------------------- */
+main ::-webkit-scrollbar {
+    width: 0.69rem;
+    background: var(--button-text);
+    border-radius: var(--border-radius);
+    border-right: none;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--active); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary); 
+}
+::-webkit-scrollbar-button {
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: var(--border-radius);
+    height: 0.85rem;
+    width: 0.5rem;
+}
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url('../img/chevron-down.svg');
+    background-color: white;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url('../img/chevron-up.svg');
+}
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement
+{
+    display: none;
+}
+
+
+@media (max-width: 650px) {
+    html {
+        font-size: 12px;
+    }
+    main ::-webkit-scrollbar {
+        width: 1rem;
+        background: var(--background);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--background-transparent);
+        border-radius: var(--border-radius);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: none;
+    }
+    ::-webkit-scrollbar-button {
+        display: none;
+    }
+}

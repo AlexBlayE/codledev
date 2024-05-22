@@ -1,0 +1,165 @@
+<% 
+    let windowTitle = null;
+    let name = null;
+    let difficulty = null;
+    let easy = null;
+    let medium = null;
+    let hard = null;
+    let any = null;
+    let category = null;
+    let math = null;
+    let algorithms = null;
+    let strings = null;
+    let introductory = null;
+    let languages = null;
+    let loginToSee = null;
+
+    switch (abreviation) {
+        default:
+            windowTitle = "Codle - Un problema de código al día";
+            name = "Nombre";
+            difficulty = "Dificultad";
+            easy = "Fácil";
+            medium = "Medio";
+            hard = "Difícil";
+            any = "Cualquiera";
+            category = "Categoría";
+            math = "Matemáticas";
+            algorithms = "Algoritmos";
+            strings = "Cadenas";
+            introductory = "Introductorio";
+            languages = "Lenguajes disponibles";
+            loginToSee = "Inicia sesión para ver los problemas";
+            break;
+        case "en":
+            windowTitle = "Codle - A daily code problem";
+            name = "Name";
+            difficulty = "Difficulty";
+            easy = "Easy";
+            medium = "Medium";
+            hard = "Hard";
+            any = "Any";
+            category = "Category";
+            math = "Math";
+            algorithms = "Algorithms";
+            strings = "Strings";
+            introductory = "Introductory";
+            languages = "Available Languages";
+            loginToSee = "Log in to see the problems";
+            break;
+        case "ca":
+            windowTitle = "Codle - Un problema de codi al dia";
+            name = "Nom";
+            difficulty = "Dificultat";
+            easy = "Fàcil";
+            medium = "Mitja";
+            hard = "Difícil";
+            any = "Qualsevol";
+            category = "Categoria";
+            math = "Matemàtiques";
+            algorithms = "Algorismes";
+            strings = "Cadenes";
+            introductory = "Introductori";
+            languages = "Llenguatges disponibles";
+            loginToSee = "Inicia sessió per veure els problemes";
+            break;
+    }
+ %>
+
+
+<!DOCTYPE html>
+<html lang="<%- abreviation %>">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- windowTitle %></title>
+    <link rel="icon" type="image/svg" href="img/favicon.svg" />
+    <meta name="description"
+        content="Refuerza tus conocimientos de código retándote con un problema diario disponible en varios lenguajes de programación.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/problems.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="js/problems.js" type="module" defer></script>
+    <script src="js/list.js" type="module" defer></script>
+    <script type="module" src="js/main.js" defer></script>
+    <script src="js/formsManagement.js" defer></script>
+</head>
+
+<body>
+    <%- include('./components/header') %>
+        <main>
+            <div id="list">
+                <div id="search-bar">
+                    <ul id="search-filters">
+                        <li>
+                            <input id="problem-name" name="problem-name" type="text" placeholder="<%- name %>">
+                        </li>
+                        <li>
+                            <select id="problem-difficulty">
+                                <option value="none" hidden selected><%- difficulty %></option>
+                                <option value="easy"><%- easy %></option>
+                                <option value="medium"><%- medium %></option>
+                                <option value="hard"><%- hard %></option>
+                                <option value="any"><%- any %></option>
+                            </select>
+                        </li>
+                        <li>
+                            <select id="problem-category">
+                                <option value="none" hidden selected><%- category %></option>
+                                <option value="math"><%- math %></option>
+                                <option value="algorithms"><%- algorithms %></option>
+                                <option value="strings"><%- strings %></option>
+                                <option value="introductory"><%- introductory %></option>
+                                <option value="any"><%- any %></option>
+                            </select>
+                        </li>
+                        <li>
+                            <select id="problem-languages" name="problem-languages">
+                            <option value="none" hidden selected><%- languages %></option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="c">C</option>
+                            <option value="c++">C++</option>
+                            <option value="python">Python</option>
+                            </select
+                        </li>
+                    </ul>
+                    <div id="search-btn">
+                        <img class="invert" src="img/magnifying-glass.svg">
+                    </div>
+                </div>
+                <div id="problem-list">
+                    <% if (isLogged) { %>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><%- name %></th>
+                                <th><%- difficulty %></th>
+                                <th><%- category %></th>
+                                <th><%- languages %></th>
+                            </tr>
+                        </thead>
+                        <tbody id="list-items">
+                            <tr>
+                                <td>Ligma</td>
+                                <td>Easy</td>
+                                <td>Memes</td>
+                                <td>Python, JavaScript</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                    <p><%- loginToSee %></p>
+                    <% } %>
+                </div>
+            </div>
+        </main>
+</body>
+
+</html>

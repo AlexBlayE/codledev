@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codle Dashboard - Problems</title>
+    <link rel="icon" type="image/svg" href="/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/adminMain.css">
+    <link rel="stylesheet" href="/css/adminCRUD.css">
+    <link rel="stylesheet" href="/css/adminHeader.css">
+    <script type="module" src="/js/adminProblems.js" defer></script>
+    <script src="/js/adminMain.js" defer></script>
+</head>
+
+<body>
+    <%- include('components/adminHeader.ejs') %>
+        <main>
+            <h1>Problems <button>+ New Problem</button></h1>
+            <div id="search-bar">
+                <input type="text" id="search" placeholder="Search by problem name">
+                <button id="search-button">Find Problem</button>
+            </div>
+            <div id="paginated-list">
+                <ul id="item-list" class="item-list">
+                    <li class="item">
+                        <div class="item-info">
+                            <span>Name</span>
+                            <span>Difficulty</span>
+                            <span>Category</span>
+                            <span>Available Languages</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </li>
+                </ul>
+                <div id="pagination">
+                    <button id="first" disabled>&lt;&lt;</button>
+                    <button id="previous" class="prevnext-btn" disabled>&lt;</button>
+                    <button id="left" class="page" disabled>1</button>
+                    <button id="middle" class="page">2</button>
+                    <button id="right" class="page">3</button>
+                    <button id="next" class="prevnext-btn">&gt;</button>
+                    <button id="last">&gt;&gt;</button>
+                </div>
+            </div>
+        </main>
+</body>
+
+</html>

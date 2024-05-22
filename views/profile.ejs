@@ -1,0 +1,114 @@
+<% let windowTitle=null; let position=null; let solved=null; let preferred=null; let changeUsername=null; let
+    newUsername=null; let changeEmail=null; let newEmail=null; let changePassword=null; let newPassword=null; let
+    currentPassword=null; let saveChanges=null; switch (abreviation) { default:
+    windowTitle="Codle - Un problema de código al día" ; position="POSICIÓN" ; solved="RESUELTOS" ;
+    preferred="PREFERIDO" ; changeUsername="Cambiar Nombre de Usuario" ; newUsername="Nuevo nombre de usuario" ;
+    changeEmail="Cambiar Correo Electrónico" ; newEmail="Nuevo correo electrónico" ; changePassword="Cambiar Contraseña"
+    ; newPassword="Nueva contraseña" ; currentPassword="Contraseña actual" ; saveChanges="Guardar cambios" ; break;
+    case "en" : windowTitle="Codle - A daily code problem" ; position="POSITION" ; solved="SOLVED" ;
+    preferred="PREFERRED" ; changeUsername="Change Username" ; newUsername="New username" ; changeEmail="Change Email" ;
+    newEmail="New email" ; changePassword="Change Password" ; newPassword="New password" ;
+    currentPassword="Current password" ; saveChanges="Save changes" ; break; case "ca" :
+    windowTitle="Codle - Un problema de codi al dia" ; position="POSICIÓ" ; solved="RESOLTS" ; preferred="PREFERIT" ;
+    changeUsername="Canviar Nom d'Usuari" ; newUsername="Nou nom d'usuari" ; changeEmail="Canviar Correu Electrònic" ;
+    newEmail="Nou correu electrònic" ; changePassword="Canviar Contrasenya" ; newPassword="Nova contrasenya" ;
+    currentPassword="Contrasenya actual" ; saveChanges="Desar canvis" ; break; } %>
+
+
+
+    <!DOCTYPE html>
+    <html lang="<% abreviation %>">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%- windowTitle %></title>
+        <link rel="icon" type="image/svg" href="img/favicon.svg" />
+        <meta name="description"
+            content="Refuerza tus conocimientos de código retándote con un problema diario disponible en varios lenguajes de programación.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/reset.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/animations.css">
+        <script type="module" src="/js/main.js" defer></script>
+        <script type="module" src="/js/profile.js" defer></script>
+        <script src="/js/formsManagement.js" defer></script>
+    </head>
+
+    <body>
+        <%- include('./components/header') %>
+            <main>
+                <div id="profile-container">
+                    <div id="profile-info" class="profile-chunk">
+                        <h1 id="profile-name">Easter Egg</h1>
+                        <div id="profile-stats">
+                            <div class="profile-stat">
+                                <div class="stat-icon">
+                                    <img class="invert" src="img/ranking.svg">
+                                    <p><%- position %></p>
+                                </div>
+                                <div id="position-stat" class="stat">
+                                    <p>1</p>
+                                </div>
+                            </div>
+                            <div class="profile-stat">
+                                <div class="stat-icon">
+                                    <img class="invert" src="img/check.svg">
+                                    <p><%- solved %></p>
+                                </div>
+                                <div id="resolved-stat" class="stat">
+                                    <p>5</p>
+                                </div>
+                            </div>
+                            <div class="profile-stat">
+                                <div class="stat-icon">
+                                    <img id="language-icon" class="invert" src="img/language.svg">
+                                    <p><%- preferred %></p>
+                                </div>
+                                <div id="favourite-stat" class="stat">
+                                    <p>JAVASCRIPT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="profile-settings" class="profile-chunk">
+                        <form action="/profile" method="POST" id="profile-settings-form">
+                            <div id="username-settings" class="data-settings">
+                                <h2><%- changeUsername %></h2>
+                                <div>
+                                    <input type="text" name="username" id="username" class="profile-settings-input"
+                                        placeholder="<%- newUsername %>" required>
+                                    <label id="username-save" for="username"><img class="invert" src="img/floppy.svg"></label>
+                                </div>
+                            </div>
+                            <div id="email-settings" class="data-settings">
+                                <h2><%- changeEmail %></h2>
+                                <div>
+                                    <input type="email" name="email" id="email" class="profile-settings-input"
+                                        placeholder="<%- newEmail %>" required>
+                                    <label id="email-save" for="email"><img class="invert" src="img/floppy.svg"></label>
+                                </div>
+                            </div>
+                            <div id="password-settings" class="data-settings">
+                                <h2><%- changePassword %></h2>
+                                <div>
+                                    <input type="password" name="new-password" id="new-password"
+                                        class="profile-settings-input" placeholder="<%- newPassword %>" required>
+                                        <label id="password-save" for="new-password"><img class="invert" src="img/floppy.svg"></label>
+                                </div>
+                                <div>
+                                    <input type="password" name="current-password" id="current-password"
+                                        class="profile-settings-input" placeholder="<%- currentPassword %>" required>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+    </body>
+
+    </html>
