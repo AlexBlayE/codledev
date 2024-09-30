@@ -40,7 +40,7 @@ export const getDailyProblem = async (projection: object) => {
 	if (dailyProblem) {
 		return dailyProblem;
 	} else {
-		return await Mongo.findOne(Problem, { title_en: "Asteriscos" }, projection);
+		return await Mongo.findOne(Problem, { title_es: "Asteriscos" }, projection);
 	}
 };
 
